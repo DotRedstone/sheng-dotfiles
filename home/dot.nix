@@ -23,7 +23,7 @@
     
     # 常用应用
     firefox
-    gnome.gnome-system-monitor # GNOME 原生的系统监视器 (带图形界面)
+    gnome-system-monitor # GNOME 原生的系统监视器 (带图形界面)
     btop # 最强悍酷炫的终端性能监视工具
   ];
 
