@@ -11,9 +11,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # 引用本地的上游硬件库（开发调试极其方便）
-    # 如果想引用远程 GitHub，可以改为: url = "github:DotRedstone/nixos-xiaomi-sheng";
-    xiaomi-sheng.url = "path:../nixos-xiaomi-sheng";
+    # 直接引用远程 GitHub 上的硬件仓库，这样你在平板上拉取后开箱即用，不需要再克隆一次底层仓库
+    xiaomi-sheng.url = "github:DotRedstone/nixos-xiaomi-sheng";
   };
 
   outputs = { self, nixpkgs, home-manager, xiaomi-sheng, ... }@inputs: 
