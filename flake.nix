@@ -26,19 +26,19 @@
       # 传入 inputs，方便在 configuration.nix 中调用
       specialArgs = { inherit inputs; };
       modules = [
-        # 1. 继承上游 sheng 的底层硬件支持
-        xiaomi-sheng.nixosModules.xiaomi-sheng
+        # 1. 继承上游 sheng 的底层硬件支持 (现在上游已经暴露了标准的 default 模块)
+        xiaomi-sheng.nixosModules.default
         # 2. 引入你的专属系统配置
         ./hosts/sheng/configuration.nix
       ];
     };
 
-    # Home Manager 配置：可以通过 `home-manager switch --flake .#luser@sheng` 部署
-    homeConfigurations."luser@sheng" = home-manager.lib.homeManagerConfiguration {
+    # Home Manager 配置：可以通过 `home-manager switch --flake .#dot@sheng` 部署
+    homeConfigurations."dot@sheng" = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
       extraSpecialArgs = { inherit inputs; };
       modules = [
-        ./home/luser.nix
+        ./home/dot.nix
       ];
     };
   };
