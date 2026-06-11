@@ -28,9 +28,9 @@
     htop
   ];
 
-  # === 彻底覆盖上游的默认 luser 设置 ===
-  # 1. 禁用上游自动创建的 luser 账号
-  users.users.luser.isNormalUser = pkgs.lib.mkForce false;
+  # === 彻底覆盖上游的默认配置 ===
+  # 注意：为了不破坏上游 Home Manager 的构建逻辑，我们保留底层自动生成的 luser 账号，但不再使用它。
+
   
   # 2. 创建你专属的 dot 账号，密码设为 1
   users.users.dot = {
