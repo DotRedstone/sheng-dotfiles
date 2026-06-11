@@ -6,6 +6,10 @@
 { config, pkgs, ... }:
 
 {
+  imports = [
+    ./apps/minecraft
+  ];
+
   # 注意：在 Home Manager 独立部署模式下，username 和 homeDirectory 是必填项
   home.username = "dot";
   home.homeDirectory = "/home/dot";
