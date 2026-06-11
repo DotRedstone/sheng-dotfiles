@@ -22,7 +22,7 @@
     
     # 依赖工具（有些 Mod 或者启动器需要用到）
     xorg.xrandr
-    glfw-wayland
+    glfw
     openal
   ];
 

@@ -29,8 +29,8 @@
   # Git 配置
   programs.git = {
     enable = true;
-    userName = "dot";
-    userEmail = "dot@example.com";
+    userName = "luser";
+    userEmail = "luser@example.com";
     extraConfig = {
       init.defaultBranch = "main";
     };
