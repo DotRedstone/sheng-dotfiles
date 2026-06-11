@@ -46,4 +46,14 @@
   # 你还可以在这里添加其他系统级的服务
   # 比如 SSH、Docker、Tailscale 等
   # services.openssh.enable = true;
+
+  # === 分配 Swap (虚拟内存) ===
+  # 为了防止跑大型重度应用（比如带一堆 Mod 的 Minecraft）时内存爆满闪退
+  # 这里在系统盘分配 8GB 的动态 Swap 文件
+  swapDevices = [
+    {
+      device = "/var/lib/swapfile";
+      size = 8192; # 8192 MB = 8 GB
+    }
+  ];
 }
