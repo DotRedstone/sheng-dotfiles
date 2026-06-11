@@ -8,18 +8,19 @@
 {
   # 将依赖的软件包统一写在这里
   home.packages = with pkgs; [
-    # 首推 PrismLauncher：开源、原生支持 Linux 和 Wayland，管理多实例和 Mod 极其方便
-    prismlauncher
+    # 首推 PrismLauncher：原生支持 Wayland。
+    # 巧妙利用 override，将所有版本的 Java 环境悄悄注入给启动器内部，而不是全局安装（防止不同版本的 java 命令冲突）
+    (prismlauncher.override {
+      jdks = [
+        jdk8
+        jdk17
+        jdk21
+      ];
+    })
 
     # 同时也备用一个 HMCL，适合国内习惯
     hmcl
 
-    # === 运行环境 (Java) ===
-    # Minecraft 不同版本需要不同版本的 Java，我们全给装上
-    jdk8    # 适用于 1.12.2 及以下老版本
-    jdk17   # 适用于 1.17 - 1.20.4
-    jdk21   # 适用于 1.20.5 及以上最新版本
-    
     # 依赖工具（有些 Mod 或者启动器需要用到）
     xrandr
     glfw
