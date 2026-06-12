@@ -24,6 +24,8 @@
     # 常用应用
     firefox
     gnome-system-monitor # GNOME 原生的系统监视器 (带图形界面)
+    snapshot # GNOME 原生相机应用
+    resources # GNOME 风格的资源与性能监视器
     gnome-console # GNOME 默认终端模拟器
     btop # 最强悍酷炫的终端性能监视工具
   ];
