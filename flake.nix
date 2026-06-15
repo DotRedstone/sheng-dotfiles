@@ -21,9 +21,14 @@
     pkgs = nixpkgs.legacyPackages.${system};
   in {
     # System 配置：可以通过 `nixos-rebuild switch --flake .#sheng` 部署
-    nixosConfigurations.sheng = xiaomi-sheng.lib.${system}.mkShengSystem [
+    nixosConfigurations.sheng = xiaomi-sheng.lib.${system}.mkShengGnomeSystem [
       # 传入 inputs，方便在下游 configuration.nix 中随意调用外部 flake
-      { _module.args.inputs = inputs; }
+      {
+        _module.args.inputs = inputs;
+        environment.systemPackages = [
+          home-manager.packages.${system}.default
+        ];
+      }
       # 引入你的专属系统配置
       ./hosts/sheng/configuration.nix
     ];
