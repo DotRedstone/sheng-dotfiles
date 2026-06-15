@@ -31,6 +31,7 @@
       }
       # 引入你的专属系统配置
       ./hosts/sheng/configuration.nix
+      ./hosts/sheng/input-method.nix
     ];
 
     # Home Manager 配置：可以通过 `home-manager switch --flake .#dot@sheng` 部署
