@@ -1,0 +1,29 @@
+layout {
+    default_tab_template {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        children
+        pane size=1 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+
+    tab name="Work" {
+        pane split_direction="vertical" {
+            pane split_direction="horizontal" size="34%" {
+                pane name="Terminal" size="45%" command="fish" {
+                    args "-lc" "cd ~/sheng-dotfiles && exec fish"
+                }
+
+                pane name="Agent" size="55%" command="fish" {
+                    args "-lc" "cd ~/sheng-dotfiles && exec opencode"
+                }
+            }
+
+            pane name="Editor" size="66%" command="nvim" {
+                args "~/sheng-dotfiles"
+            }
+        }
+    }
+}

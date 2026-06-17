@@ -1,0 +1,24 @@
+layout {
+    default_tab_template {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        children
+        pane size=1 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+
+    tab name="Vibe" {
+        pane split_direction="vertical" {
+            pane split_direction="horizontal" size="35%" {
+                pane name="lazygit" size="40%" command="lazygit"
+                pane name="opencode" size="60%" command="opencode"
+            }
+
+            pane name="nixvim" size="65%" command="nvim" {
+                args "."
+            }
+        }
+    }
+}

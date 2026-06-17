@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30" height="30" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="softShadow" x="-22%" y="-22%" width="144%" height="144%">
+      <feDropShadow dx="1.2" dy="2" stdDeviation="2.6" flood-color="{{colors.shadow.light.hex}}" flood-opacity="0.14"/>
+    </filter>
+  </defs>
+  <rect x="7" y="7" width="46" height="46" rx="18" fill="{{colors.surface_container_low.light.hex}}" stroke="{{colors.outline_variant.light.hex}}" stroke-width="1.2" filter="url(#softShadow)"/>
+</svg>

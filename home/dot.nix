@@ -8,6 +8,17 @@
 {
   imports = [
     ./apps/minecraft
+    ./cli-tools
+    ./fish
+    ./starship
+    ./zellij
+    ./wezterm
+    ./firefox
+    ./fcitx5
+    ./telegram
+    ./wechat
+    ./yazi
+    ./nixvim
   ];
 
   # 注意：在 Home Manager 独立部署模式下，username 和 homeDirectory 是必填项
@@ -17,12 +28,7 @@
   # 用户专属的私人软件包 (不污染系统全局环境)
   home.packages = with pkgs; [
     # 开发工具
-    jq
-    ripgrep
-    fzf
-    
     # 常用应用
-    firefox
     gnome-system-monitor # GNOME 原生的系统监视器 (带图形界面)
     snapshot # GNOME 原生相机应用
     resources # GNOME 风格的资源与性能监视器

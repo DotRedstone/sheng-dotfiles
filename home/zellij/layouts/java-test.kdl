@@ -1,0 +1,24 @@
+layout {
+    default_tab_template {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        children
+        pane size=1 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+
+    tab name="Code" {
+        pane split_direction="vertical" {
+            pane name="opencode" size="35%" command="opencode" {
+                cwd "~/sheng-dotfiles"
+            }
+
+            pane name="nixvim" size="65%" command="nvim" {
+                cwd "~/sheng-dotfiles"
+                args "."
+            }
+        }
+    }
+}

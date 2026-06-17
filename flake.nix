@@ -11,6 +11,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # 引用公开发布版的 sheng 硬件仓库。普通用户只需要 clone 本仓库，
     # 不需要在本地额外 clone nixos-xiaomi-sheng。
     xiaomi-sheng = {
@@ -26,7 +31,10 @@
   outputs = { self, nixpkgs, home-manager, xiaomi-sheng, ... }@inputs: 
   let
     system = "aarch64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
+    pkgs = import nixpkgs {
+      inherit system;
+      config.allowUnfree = true;
+    };
   in {
     # System 配置：可以通过 `nixos-rebuild switch --flake .#sheng` 部署
     nixosConfigurations.sheng = xiaomi-sheng.lib.${system}.mkShengGnomeSystem [
@@ -48,6 +56,7 @@
       extraSpecialArgs = { inherit inputs; };
       modules = [
         ./home/dot.nix
+        inputs.nixvim.homeModules.nixvim
       ];
     };
   };
