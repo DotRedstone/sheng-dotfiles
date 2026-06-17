@@ -4,7 +4,7 @@
 # Scope: Home Manager
 # ---
 
-{ config, lib, pkgs, ... }:
+{ lib, pkgs, ... }:
 let
   optionalPackage = name:
     lib.optional
@@ -101,9 +101,20 @@ in
   # Lazygit: Git terminal UI
   programs.lazygit = {
     enable = true;
+    settings = {
+      gui.theme = {
+        activeBorderColor = [ "#cba6f7" "bold" ];
+        inactiveBorderColor = [ "#6c7086" ];
+        optionsTextColor = [ "#89b4fa" ];
+        selectedLineBgColor = [ "#313244" ];
+        cherryPickedCommitBgColor = [ "#313244" ];
+        cherryPickedCommitFgColor = [ "#cba6f7" ];
+        unstagedChangesColor = [ "#f38ba8" ];
+        defaultFgColor = [ "#cdd6f4" ];
+        searchingActiveBorderColor = [ "#f9e2af" ];
+      };
+    };
   };
-
-  xdg.configFile."lazygit/config.yml".source = ./lazygit-config.yml.template;
 
   # [Fastfetch Config]
   xdg.configFile."fastfetch/config.jsonc".source = ./fastfetch.json;
