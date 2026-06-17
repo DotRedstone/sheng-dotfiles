@@ -30,7 +30,7 @@
     };
 
     # [Keybindings]
-    # Keep it minimal, matching Warden's ethos
+    # Keep it compact for the tablet profile.
     keymap = {
       manager.prepend_keymap = [
         { on = [ "g" "d" ]; run = "cd ~/sheng-dotfiles"; desc = "Go to sheng-dotfiles"; }

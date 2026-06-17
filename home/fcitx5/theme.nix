@@ -78,18 +78,18 @@ in
       printf '%s\n' \
         'Vertical Candidate List=False' \
         'Theme=noctalia-inflex-dark' \
-        'Font="Maple Mono NF 13"' \
-        'MenuFont="Maple Mono NF 13"' \
-        'TrayFont="Maple Mono NF 10"' \
+        'Font="Noto Sans CJK SC 14"' \
+        'MenuFont="Noto Sans CJK SC 14"' \
+        'TrayFont="Noto Sans CJK SC 11"' \
         > "$conf"
     fi
 
     # Ensure required keys exist without overwriting user-modified values
     grep -q '^Vertical Candidate List=' "$conf" || printf '%s\n' 'Vertical Candidate List=False' >> "$conf"
     grep -q '^Theme=' "$conf" || printf '%s\n' 'Theme=noctalia-inflex-dark' >> "$conf"
-    grep -q '^Font=' "$conf" || printf '%s\n' 'Font="Maple Mono NF 13"' >> "$conf"
-    grep -q '^MenuFont=' "$conf" || printf '%s\n' 'MenuFont="Maple Mono NF 13"' >> "$conf"
-    grep -q '^TrayFont=' "$conf" || printf '%s\n' 'TrayFont="Maple Mono NF 10"' >> "$conf"
+    grep -q '^Font=' "$conf" || printf '%s\n' 'Font="Noto Sans CJK SC 14"' >> "$conf"
+    grep -q '^MenuFont=' "$conf" || printf '%s\n' 'MenuFont="Noto Sans CJK SC 14"' >> "$conf"
+    grep -q '^TrayFont=' "$conf" || printf '%s\n' 'TrayFont="Noto Sans CJK SC 11"' >> "$conf"
   '';
 
   home.file = {

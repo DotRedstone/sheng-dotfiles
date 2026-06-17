@@ -4,7 +4,7 @@
 # Scope: Home Manager
 # ---
 
-{ ... }: {
+{ config, ... }: {
   programs.firefox.profiles.dot.settings = {
     # [Locale & UI]
     "intl.locale.requested" = "zh-CN";
@@ -18,19 +18,19 @@
     "sidebar.revamp" = true;
 
     # [Typography]
-    # Matching Warden's system-wide fonts
-    "font.name.sans-serif.zh-CN" = "LXGW Neo XiHei";
-    "font.name.serif.zh-CN" = "LXGW WenKai";
-    "font.name.monospace.zh-CN" = "Maple Mono NF";
+    # Use fonts that are shipped by the sheng GNOME profile.
+    "font.name.sans-serif.zh-CN" = "Noto Sans CJK SC";
+    "font.name.serif.zh-CN" = "Noto Serif CJK SC";
+    "font.name.monospace.zh-CN" = "Noto Sans Mono CJK SC";
     "font.default.zh-CN" = "sans-serif";
 
-    "font.name.sans-serif.x-western" = "Inter";
-    "font.name.serif.x-western" = "LXGW WenKai";
-    "font.name.monospace.x-western" = "Maple Mono NF";
+    "font.name.sans-serif.x-western" = "Noto Sans";
+    "font.name.serif.x-western" = "Noto Serif";
+    "font.name.monospace.x-western" = "Noto Sans Mono";
     "font.default.x-western" = "sans-serif";
 
     # [Downloads]
-    "browser.download.dir" = "/home/dot/Downloads";
+    "browser.download.dir" = "${config.home.homeDirectory}/Downloads";
     "browser.download.folderList" = 2;
 
     # [Wayland / Mixed DPI]
