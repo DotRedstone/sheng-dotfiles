@@ -7,6 +7,7 @@
 { pkgs, ... }: {
   programs.nixvim = {
     enable = true;
+    enableMan = false;
     defaultEditor = true;
     viAlias = false;
     vimAlias = false;
