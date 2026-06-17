@@ -18,10 +18,10 @@
     "sidebar.revamp" = true;
 
     # [Typography]
-    # Mirror the main dotfiles font stack: Inter/LXGW for text, Maple for code.
-    "font.name.sans-serif.zh-CN" = "LXGW Neo XiHei";
+    # Keep western/code text sharp, but make Chinese text rounder and calmer.
+    "font.name.sans-serif.zh-CN" = "LXGW WenKai";
     "font.name.serif.zh-CN" = "LXGW WenKai";
-    "font.name.monospace.zh-CN" = "Maple Mono NF";
+    "font.name.monospace.zh-CN" = "LXGW WenKai";
     "font.default.zh-CN" = "sans-serif";
 
     "font.name.sans-serif.x-western" = "Inter";
