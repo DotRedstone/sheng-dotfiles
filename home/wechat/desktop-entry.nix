@@ -4,11 +4,12 @@
 # Scope: Home Manager
 # ---
 
-{ ... }: {
+{ lib, pkgs, ... }:
+lib.mkIf pkgs.stdenv.hostPlatform.isx86_64 {
   xdg.desktopEntries."com.tencent.wechat" = {
-    name = "微信 UOS";
+    name = "WeChat UOS";
     genericName = "WeChat UOS";
-    comment = "微信桌面版 UOS";
+    comment = "WeChat UOS desktop client";
     exec = "wechat-uos -- %U";
     icon = "com.tencent.wechat";
     terminal = false;

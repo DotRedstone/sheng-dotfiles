@@ -4,8 +4,8 @@
 # Scope: Home Manager
 # ---
 
-{ lib, pkgs, ... }: {
-  imports = lib.optionals pkgs.stdenv.hostPlatform.isx86_64 [
+{ ... }: {
+  imports = [
     ./packages.nix
     ./desktop-entry.nix
     ./notify-bridge.nix

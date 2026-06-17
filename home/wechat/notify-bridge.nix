@@ -4,11 +4,10 @@
 # Scope: Home Manager
 # ---
 
-{ pkgs, ... }:
-let
+{ lib, pkgs, ... }:
+lib.mkIf pkgs.stdenv.hostPlatform.isx86_64 (let
   wechat = pkgs.callPackage ./package.nix { };
-in
-{
+in {
   systemd.user.services.wechat-notify-bridge = {
     Unit = {
       Description = "Bridge WeChat activity into desktop notifications";
@@ -26,4 +25,4 @@ in
       WantedBy = [ "graphical-session.target" ];
     };
   };
-}
+})

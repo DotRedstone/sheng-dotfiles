@@ -4,14 +4,13 @@
 # Scope: Home Manager
 # ---
 
-{ pkgs, ... }:
-let
+{ lib, pkgs, ... }:
+lib.mkIf pkgs.stdenv.hostPlatform.isx86_64 (let
   wechat = pkgs.callPackage ./package.nix { };
-in
-{
+in {
   home.packages = [
     wechat.wechat-uos
     wechat.notifyBridge
     pkgs.libnotify
   ];
-}
+})
