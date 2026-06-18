@@ -102,7 +102,7 @@ in
     };
 
     "org/gnome/desktop/a11y/applications" = {
-      screen-keyboard-enabled = true;
+      screen-keyboard-enabled = false;
       screen-magnifier-enabled = false;
       screen-reader-enabled = false;
     };
