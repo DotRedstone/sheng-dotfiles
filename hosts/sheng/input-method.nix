@@ -1,6 +1,6 @@
 # ---
 # Module: Chinese Input Method
-# Description: Provide the IBus LibPinyin engine for GNOME sessions
+# Description: Provide Fcitx5 with Rime for GNOME sessions
 # Scope: Host
 # ---
 { pkgs, ... }:
@@ -8,9 +8,12 @@
 {
   i18n.inputMethod = {
     enable = true;
-    type = "ibus";
-    ibus.engines = with pkgs.ibus-engines; [
-      libpinyin
+    type = "fcitx5";
+    fcitx5.addons = with pkgs; [
+      fcitx5-chinese-addons
+      fcitx5-configtool
+      fcitx5-gtk
+      fcitx5-rime
     ];
   };
 }
