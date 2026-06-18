@@ -291,14 +291,6 @@ EOF
     input_path = "${matugenTemplates}/wezterm-frame.lua"
     output_path = "/home/dot/.config/wezterm/sheng-frame.lua"
 
-    [templates.gtk4_css]
-    input_path = "${matugenTemplates}/gtk.css"
-    output_path = "/home/dot/.config/gtk-4.0/gtk.css"
-
-    [templates.gtk3_css]
-    input_path = "${matugenTemplates}/gtk.css"
-    output_path = "/home/dot/.config/gtk-3.0/gtk.css"
-
     [templates.starship]
     input_path = "${matugenTemplates}/starship.toml"
     output_path = "/home/dot/.cache/sheng-theme/starship.toml"
@@ -581,10 +573,6 @@ in
       name = "Bibata-Modern-Classic";
       package = pkgs.bibata-cursors;
       size = 32;
-    };
-    gtk4.theme = {
-      name = "adw-gtk3";
-      package = pkgs.adw-gtk3;
     };
   };
 
