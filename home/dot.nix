@@ -7,6 +7,7 @@
 { pkgs, ... }: {
   imports = [
     ./apps/minecraft
+    ./fonts
     ./gnome
     ./theme
     ./dev

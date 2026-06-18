@@ -10,7 +10,7 @@ function M.apply(config, wezterm)
   -- [Visuals & Typography]
   config.font = wezterm.font_with_fallback({
     { family = 'Maple Mono NF', weight = 'Regular' },
-    { family = 'LXGW WenKai', weight = 'Regular' },
+    { family = 'FZYJHK B', weight = 'Regular' },
     { family = 'Sarasa Mono SC', weight = 'Regular' },
     { family = 'Noto Sans CJK SC', weight = 'Regular' },
     { family = 'Symbols Nerd Font Mono', weight = 'Regular' },

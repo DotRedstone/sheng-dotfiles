@@ -78,28 +78,28 @@ in
       printf '%s\n' \
         'Vertical Candidate List=False' \
         'Theme=noctalia-inflex-dark' \
-        'Font="LXGW WenKai 14"' \
-        'MenuFont="LXGW WenKai 14"' \
-        'TrayFont="LXGW WenKai 11"' \
+        'Font="FZYJHK B 14"' \
+        'MenuFont="FZYJHK B 14"' \
+        'TrayFont="FZYJHK B 11"' \
         > "$conf"
     fi
 
     # Ensure required keys exist without overwriting user-modified values
     grep -q '^Vertical Candidate List=' "$conf" || printf '%s\n' 'Vertical Candidate List=False' >> "$conf"
     grep -q '^Theme=' "$conf" || printf '%s\n' 'Theme=noctalia-inflex-dark' >> "$conf"
-    if grep -q '^Font="Maple Mono NF ' "$conf"; then
-      sed -i 's/^Font=.*/Font="LXGW WenKai 14"/' "$conf"
+    if grep -Eq '^Font="(Maple Mono NF|LXGW WenKai|FZYJHK) ' "$conf"; then
+      sed -i 's/^Font=.*/Font="FZYJHK B 14"/' "$conf"
     fi
-    if grep -q '^MenuFont="Maple Mono NF ' "$conf"; then
-      sed -i 's/^MenuFont=.*/MenuFont="LXGW WenKai 14"/' "$conf"
+    if grep -Eq '^MenuFont="(Maple Mono NF|LXGW WenKai|FZYJHK) ' "$conf"; then
+      sed -i 's/^MenuFont=.*/MenuFont="FZYJHK B 14"/' "$conf"
     fi
-    if grep -q '^TrayFont="Maple Mono NF ' "$conf"; then
-      sed -i 's/^TrayFont=.*/TrayFont="LXGW WenKai 11"/' "$conf"
+    if grep -Eq '^TrayFont="(Maple Mono NF|LXGW WenKai|FZYJHK) ' "$conf"; then
+      sed -i 's/^TrayFont=.*/TrayFont="FZYJHK B 11"/' "$conf"
     fi
 
-    grep -q '^Font=' "$conf" || printf '%s\n' 'Font="LXGW WenKai 14"' >> "$conf"
-    grep -q '^MenuFont=' "$conf" || printf '%s\n' 'MenuFont="LXGW WenKai 14"' >> "$conf"
-    grep -q '^TrayFont=' "$conf" || printf '%s\n' 'TrayFont="LXGW WenKai 11"' >> "$conf"
+    grep -q '^Font=' "$conf" || printf '%s\n' 'Font="FZYJHK B 14"' >> "$conf"
+    grep -q '^MenuFont=' "$conf" || printf '%s\n' 'MenuFont="FZYJHK B 14"' >> "$conf"
+    grep -q '^TrayFont=' "$conf" || printf '%s\n' 'TrayFont="FZYJHK B 11"' >> "$conf"
   '';
 
   home.file = {

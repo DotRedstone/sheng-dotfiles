@@ -30,9 +30,9 @@ in
   fonts.fontconfig = {
     enable = true;
     defaultFonts = {
-      sansSerif = [ "Inter" "LXGW WenKai" "Noto Sans CJK SC" ];
-      serif = [ "LXGW WenKai" "Noto Serif CJK SC" ];
-      monospace = [ "Maple Mono NF" "LXGW WenKai" "Sarasa Mono SC" "Noto Sans Mono CJK SC" ];
+      sansSerif = [ "Inter" "FZYJHK B" "Noto Sans CJK SC" ];
+      serif = [ "FZYJHK B" "Noto Serif CJK SC" ];
+      monospace = [ "Maple Mono NF" "FZYJHK B" "Sarasa Mono SC" "Noto Sans Mono CJK SC" ];
       emoji = [ "Noto Color Emoji" ];
     };
   };
@@ -46,7 +46,7 @@ in
           <string>zh-cn</string>
         </test>
         <edit name="family" mode="prepend">
-          <string>LXGW WenKai</string>
+          <string>FZYJHK B</string>
         </edit>
       </match>
     </fontconfig>
@@ -88,7 +88,7 @@ in
       color-scheme = "prefer-dark";
       clock-show-weekday = true;
       cursor-size = 32;
-      document-font-name = "LXGW WenKai 12";
+      document-font-name = "FZYJHK B 12";
       enable-animations = true;
       font-name = "Maple Mono NF 12";
       monospace-font-name = "Maple Mono NF 12";
