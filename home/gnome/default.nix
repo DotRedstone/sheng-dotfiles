@@ -12,6 +12,10 @@ let
       pkgs.${name};
 in
 {
+  imports = [
+    ./extensions.nix
+  ];
+
   home.language = {
     base = "zh_CN.UTF-8";
     ctype = "zh_CN.UTF-8";
