@@ -102,7 +102,7 @@ in
     };
 
     "org/gnome/desktop/a11y/applications" = {
-      screen-keyboard-enabled = false;
+      screen-keyboard-enabled = true;
     };
 
     "org/gnome/desktop/peripherals/touchpad" = {

@@ -18,6 +18,7 @@
     ./wezterm
     ./firefox
     ./fcitx5
+    ./nautilus
     ./telegram
     ./wechat
     ./yazi

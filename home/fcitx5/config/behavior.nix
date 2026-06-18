@@ -8,8 +8,8 @@
   # Fcitx5 Behavior settings
   behavior = ''
     [Behavior]
-    ActiveByDefault=False
-    ShareInputState=No
+    ActiveByDefault=True
+    ShareInputState=Program
     # Release Caps Lock to Rime for better ASCII/Chinese switching
     CapslockAction=None
   '';

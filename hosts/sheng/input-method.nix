@@ -12,6 +12,7 @@
     fcitx5.addons = [
       pkgs.qt6Packages.fcitx5-chinese-addons
       pkgs.qt6Packages.fcitx5-configtool
+      pkgs.qt6Packages.fcitx5-qt
       pkgs.fcitx5-gtk
       pkgs.fcitx5-rime
     ];
