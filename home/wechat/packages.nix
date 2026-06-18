@@ -1,16 +1,20 @@
 # ---
 # Module: WeChat Packages
-# Description: Official WeChat for Linux client and notification bridge packages
+# Description: Official WeChat for Linux client packages
 # Scope: Home Manager
 # ---
 
 { lib, pkgs, ... }:
-lib.mkIf pkgs.stdenv.hostPlatform.isx86_64 (let
+let
   wechat = pkgs.callPackage ./package.nix { };
 in {
   home.packages = [
-    wechat.wechat-uos
-    wechat.notifyBridge
     pkgs.libnotify
+  ]
+  ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux [
+    pkgs.wechat
+  ]
+  ++ lib.optionals pkgs.stdenv.hostPlatform.isx86_64 [
+    wechat.notifyBridge
   ];
-})
+}
