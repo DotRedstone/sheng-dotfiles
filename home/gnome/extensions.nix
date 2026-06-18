@@ -9,7 +9,6 @@ let
   extensions = with pkgs.gnomeExtensions; [
     appindicator
     caffeine
-    dash-to-dock
     quick-settings-tweaker
     tiling-assistant
     touchup
@@ -39,32 +38,6 @@ in
       screen-rotate-utils-floating-screen-rotate-button-enabled = true;
       double-tap-to-sleep-enabled = true;
       notification-gestures-enabled = true;
-    };
-
-    "org/gnome/shell/extensions/dash-to-dock" = {
-      dock-position = "BOTTOM";
-      dock-fixed = false;
-      autohide = true;
-      intellihide = true;
-      intellihide-mode = "FOCUS_APPLICATION_WINDOWS";
-      require-pressure-to-show = false;
-      show-delay = 0.05;
-      hide-delay = 0.12;
-      animation-time = 0.18;
-      dash-max-icon-size = 56;
-      icon-size-fixed = false;
-      extend-height = false;
-      height-fraction = 0.88;
-      click-action = "focus-or-previews";
-      scroll-action = "switch-workspace";
-      show-windows-preview = true;
-      show-show-apps-button = true;
-      show-apps-at-top = false;
-      running-indicator-style = "DOTS";
-      transparency-mode = "DYNAMIC";
-      customize-alphas = true;
-      min-alpha = 0.35;
-      max-alpha = 0.82;
     };
 
     "org/gnome/shell/extensions/quick-settings-tweaks" = {
