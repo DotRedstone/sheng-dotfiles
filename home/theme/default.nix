@@ -128,16 +128,19 @@ return {
       fg_color = "{{colors.primary.default.hex}}",
     },
   },
-  window_frame = {
-    active_titlebar_bg = "{{colors.surface_container.default.hex}}",
-    inactive_titlebar_bg = "{{colors.surface_container_low.default.hex}}",
-    active_titlebar_fg = "{{colors.on_surface.default.hex}}",
-    inactive_titlebar_fg = "{{colors.on_surface_variant.default.hex}}",
-    button_fg = "{{colors.on_surface.default.hex}}",
-    button_bg = "{{colors.surface_container.default.hex}}",
-    button_hover_fg = "{{colors.on_primary_container.default.hex}}",
-    button_hover_bg = "{{colors.primary_container.default.hex}}",
-  },
+}
+EOF
+
+    cat > $out/wezterm-frame.lua <<'EOF'
+return {
+  active_titlebar_bg = "{{colors.surface_container.default.hex}}",
+  inactive_titlebar_bg = "{{colors.surface_container_low.default.hex}}",
+  active_titlebar_fg = "{{colors.on_surface.default.hex}}",
+  inactive_titlebar_fg = "{{colors.on_surface_variant.default.hex}}",
+  button_fg = "{{colors.on_surface.default.hex}}",
+  button_bg = "{{colors.surface_container.default.hex}}",
+  button_hover_fg = "{{colors.on_primary_container.default.hex}}",
+  button_hover_bg = "{{colors.primary_container.default.hex}}",
 }
 EOF
 
@@ -283,6 +286,10 @@ EOF
     [templates.wezterm]
     input_path = "${matugenTemplates}/wezterm.lua"
     output_path = "/home/dot/.config/wezterm/sheng-theme.lua"
+
+    [templates.wezterm_frame]
+    input_path = "${matugenTemplates}/wezterm-frame.lua"
+    output_path = "/home/dot/.config/wezterm/sheng-frame.lua"
 
     [templates.gtk4_css]
     input_path = "${matugenTemplates}/gtk.css"

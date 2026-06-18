@@ -14,6 +14,13 @@ function M.apply(config, _)
     local ok, dynamic_colors = pcall(dofile, theme_path)
     if ok and type(dynamic_colors) == 'table' then
       config.colors = dynamic_colors
+
+      local frame_path = home .. '/.config/wezterm/sheng-frame.lua'
+      local frame_ok, dynamic_frame = pcall(dofile, frame_path)
+      if frame_ok and type(dynamic_frame) == 'table' then
+        config.window_frame = dynamic_frame
+      end
+
       return
     end
   end
