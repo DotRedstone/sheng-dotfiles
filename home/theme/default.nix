@@ -133,6 +133,7 @@ EOF
 
     cat > $out/wezterm-frame.lua <<'EOF'
 return {
+  font_size = 13.5,
   active_titlebar_bg = "{{colors.surface_container.default.hex}}",
   inactive_titlebar_bg = "{{colors.surface_container_low.default.hex}}",
   active_titlebar_fg = "{{colors.on_surface.default.hex}}",

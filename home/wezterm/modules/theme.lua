@@ -18,6 +18,7 @@ function M.apply(config, _)
       local frame_path = home .. '/.config/wezterm/sheng-frame.lua'
       local frame_ok, dynamic_frame = pcall(dofile, frame_path)
       if frame_ok and type(dynamic_frame) == 'table' then
+        dynamic_frame.font_size = dynamic_frame.font_size or 13.5
         config.window_frame = dynamic_frame
       end
 
@@ -26,6 +27,9 @@ function M.apply(config, _)
   end
 
   config.color_scheme = 'Catppuccin Mocha'
+  config.window_frame = {
+    font_size = 13.5,
+  }
 end
 
 return M
