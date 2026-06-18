@@ -57,6 +57,12 @@ in
     gjsOsk
   ];
 
+  xdg.dataFile."gnome-shell/extensions/gjsosk@vishram1123.com" = {
+    source = "${gjsOsk}/share/gnome-shell/extensions/gjsosk@vishram1123.com";
+    recursive = true;
+    force = true;
+  };
+
   programs.gnome-shell = {
     enable = true;
     extensions = map (package: { inherit package; }) extensions;
