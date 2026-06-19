@@ -17,9 +17,9 @@
     };
 
     # 引用 sheng 硬件仓库。普通用户只需要 clone 本仓库，
-    # 不需要在本地额外 clone nixos-xiaomi-sheng。
-    xiaomi-sheng = {
-      url = "github:DotRedstone/nixos-xiaomi-sheng/sheng?dir=nixos";
+    # 不需要在本地额外 clone nixos-sheng。
+    nixos-sheng = {
+      url = "github:DotRedstone/nixos-sheng/sheng?dir=nixos";
       inputs.shengFirmware.follows = "shengFirmware";
     };
 
@@ -28,7 +28,7 @@
       "git+https://github.com/DotRedstone/sheng-firmware-full.git?rev=719086ce25222dcc54920ae12409eb5d4401bbff";
   };
 
-  outputs = { self, nixpkgs, home-manager, xiaomi-sheng, ... }@inputs: 
+  outputs = { self, nixpkgs, home-manager, nixos-sheng, ... }@inputs:
   let
     system = "aarch64-linux";
     pkgs = import nixpkgs {
@@ -37,7 +37,7 @@
     };
   in {
     # System 配置：可以通过 `nixos-rebuild switch --flake .#sheng` 部署
-    nixosConfigurations.sheng = xiaomi-sheng.lib.${system}.mkShengGnomeSystem [
+    nixosConfigurations.sheng = nixos-sheng.lib.${system}.mkShengGnomeSystem [
       # 传入 inputs，方便在下游 configuration.nix 中随意调用外部 flake
       {
         _module.args.inputs = inputs;

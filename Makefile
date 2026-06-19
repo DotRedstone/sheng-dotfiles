@@ -8,6 +8,6 @@ nrs:
 hms:
 	home-manager switch --flake .#dot@sheng
 
-# 更新 inputs（比如拉取上游 xiaomi-sheng 的最新硬件修复）
+# 更新 inputs（比如拉取上游 nixos-sheng 的最新硬件修复）
 update:
 	nix flake update

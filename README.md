@@ -3,8 +3,8 @@
 Personal NixOS and Home Manager configuration for Xiaomi Pad 6S Pro 12.4
 (`sheng`).
 
-This repository imports the published `nixos-xiaomi-sheng` hardware platform
-from GitHub. You do not need to clone `nixos-xiaomi-sheng` next to this
+This repository imports the published `nixos-sheng` hardware platform from
+GitHub. You do not need to clone `nixos-sheng` next to this
 repository.
 
 ## First deploy

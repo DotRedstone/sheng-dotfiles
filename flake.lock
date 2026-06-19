@@ -44,7 +44,7 @@
     "home-manager_2": {
       "inputs": {
         "nixpkgs": [
-          "xiaomi-sheng",
+          "nixos-sheng",
           "nixpkgs"
         ]
       },
@@ -155,7 +155,7 @@
         "nixpkgs": "nixpkgs",
         "nixvim": "nixvim",
         "shengFirmware": "shengFirmware",
-        "xiaomi-sheng": "xiaomi-sheng"
+        "nixos-sheng": "nixos-sheng"
       }
     },
     "shengFirmware": {
@@ -210,7 +210,7 @@
         "type": "github"
       }
     },
-    "xiaomi-sheng": {
+    "nixos-sheng": {
       "inputs": {
         "home-manager": "home-manager_2",
         "mobile-nixos": "mobile-nixos",
@@ -225,7 +225,7 @@
         "lastModified": 1781802682,
         "narHash": "sha256-fI4xUP3JBwxJXO8KSX82OQJ1tB8Zp+gKxjBhpUh71Bg=",
         "owner": "DotRedstone",
-        "repo": "nixos-xiaomi-sheng",
+        "repo": "nixos-sheng",
         "rev": "9b8546296ed1bebe42d0a618d464f69624c6e716",
         "type": "github"
       },
@@ -233,7 +233,7 @@
         "dir": "nixos",
         "owner": "DotRedstone",
         "ref": "sheng",
-        "repo": "nixos-xiaomi-sheng",
+        "repo": "nixos-sheng",
         "type": "github"
       }
     }
