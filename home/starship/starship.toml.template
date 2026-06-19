@@ -16,7 +16,7 @@ truncation_length = 5
 truncate_to_repo = false
 
 [directory.substitutions]
-"dotfiles-sheng" = "dotfiles-sheng"
+"sheng-dotfiles" = "sheng-dotfiles"
 "Downloads" = "Downloads"
 "Documents" = "Documents"
 "Pictures" = "Pictures"

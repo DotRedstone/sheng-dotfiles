@@ -197,7 +197,7 @@ format = " [](bold tertiary)[󰪢 $duration](bold bg:tertiary fg:235)[](bo
 disabled = false
 
 [direnv]
-format = "[](bold primary)[�?](bold bg:primary fg:235)[](bold primary) "
+format = "[](bold primary)[ ](bold bg:primary fg:235)[](bold primary) "
 style = "bold"
 disabled = false
 
@@ -220,26 +220,26 @@ format = "[](bold primary)[󰟓 $version](bold bg:primary fg:235)[](bold p
 style = "bold"
 
 [c]
-format = "[](bold primary)[�?$version](bold bg:primary fg:235)[](bold primary) "
+format = "[](bold primary)[ $version](bold bg:primary fg:235)[](bold primary) "
 style = "bold"
 
 [directory]
 style = "bold bg:secondary fg:235"
 truncation_length = 6
-truncation_symbol = " •�?"
-home_symbol = " �?"
-read_only = " �?"
+truncation_symbol = " ••/"
+home_symbol = "  "
+read_only = "  "
 format = "[](bold secondary)[󰉋 $path]($style)[](bold secondary)"
 
 [directory.substitutions]
-"Desktop" = " �?"
-"Documents" = " �?"
-"Downloads" = " �?"
+"Desktop" = "  "
+"Documents" = "  "
+"Downloads" = "  "
 "Music" = " 󰎈 "
-"Pictures" = " �?"
-"Videos" = " �?"
+"Pictures" = "  "
+"Videos" = "  "
 "GitHub" = " 󰊤 "
-"dotfiles-sheng" = " �?"
+"sheng-dotfiles" = "  "
 
 [git_branch]
 style = "bold bg:primary fg:235"
@@ -252,12 +252,12 @@ disabled = false
 
 [custom.status_dot]
 when = 'test -z "$VIRTUAL_ENV" && test -z "$DIRENV_DIR" && test ! -f package.json && test ! -f Cargo.toml && test ! -f go.mod'
-command = 'echo "�?'
+command = 'echo ""'
 format = "[$output ](bold primary)"
 
 [character]
 success_symbol = "[](bold primary)"
-error_symbol = "[�?](bold error)"
+error_symbol = "[ ](bold error)"
 
 [package]
 disabled = true
