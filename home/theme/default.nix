@@ -166,7 +166,7 @@ EOF
 palette = "sheng"
 add_newline = false
 
-format = """${custom.user_host_noenv}${custom.user_host_env} 󰜥 $directory $git_branch$cmd_duration\n$direnv${custom.venv}$nodejs$rust$golang$c${custom.status_dot}$character"""
+format = """''${custom.user_host_noenv}''${custom.user_host_env} 󰜥 $directory $git_branch$cmd_duration\n$direnv''${custom.venv}$nodejs$rust$golang$c''${custom.status_dot}$character"""
 
 [palettes.sheng]
 primary = "{{colors.primary.default.hex}}"
