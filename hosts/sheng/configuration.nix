@@ -59,8 +59,6 @@
     shell = pkgs.fish;
   };
 
-  # 3. 强制把开机自动登录账号改为 dot
-  services.getty.autologinUser = pkgs.lib.mkForce "dot";
 
   # 你还可以在这里添加其他系统级的服务
   # 比如 SSH、Docker、Tailscale 等
