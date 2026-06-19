@@ -21,6 +21,7 @@ in
     duf
     dust
     nh
+    nix-output-monitor
 
     # Aesthetics
     cmatrix

@@ -51,8 +51,8 @@
     enable = true;
     enableCompletion = true;
     shellAliases = {
-      nrs = "sudo nixos-rebuild switch --flake .#sheng";
-      hms = "home-manager switch --flake .#dot@sheng";
+      nrs = "nh os switch ~/sheng-dotfiles";
+      hms = "nh home switch ~/sheng-dotfiles";
     };
   };
 

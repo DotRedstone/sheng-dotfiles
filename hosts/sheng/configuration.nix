@@ -26,10 +26,23 @@
     wget
     curl
     htop
+    nh
+    nix-output-monitor
   ];
 
-  # === 彻底覆盖上游的默认配置 ===
-  # 注意：为了不破坏上游 Home Manager 的构建逻辑，我们保留底层自动生成的 luser 账号，但不再使用它。
+  # 覆盖公开 rootfs 里面面向上游开发仓库的旧快捷命令。
+  # 使用时先 cd 到本 dotfiles 仓库，再执行 nrs / hms。
+  environment.shellAliases = {
+    nrs = "nh os switch ~/sheng-dotfiles";
+    hms = "nh home switch ~/sheng-dotfiles";
+  };
+
+  # === 彻底隐藏上游的默认配置 ===
+  # 为了不破坏上游 Home Manager 的构建逻辑（它需要 /home/luser），
+  # 我们强行保留它的家目录，但把它降级为系统底层账户（非普通用户），
+  # 这样它就会被彻底踢出图形登录界面！
+  users.users.luser.isNormalUser = pkgs.lib.mkForce false;
+  users.users.luser.home = pkgs.lib.mkForce "/home/luser";
 
   
   # 2. 创建你专属的 dot 账号，密码设为 1
