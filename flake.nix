@@ -51,23 +51,23 @@
   in {
     nixosConfigurations = {
       # 1. GNOME 桌面环境 (使用上游预设)
-      # 部署命令: nh os switch ~/sheng-dotfiles -H sheng
+      # 部署命令: nh os switch ~/dotfiles-sheng -H sheng
       sheng = nixos-sheng.lib.${system}.mkShengGnomeSystem shengBaseModules;
 
       # 2. KDE Plasma 6 桌面环境
-      # 部署命令: nh os switch ~/sheng-dotfiles -H sheng-plasma
+      # 部署命令: nh os switch ~/dotfiles-sheng -H sheng-plasma
       sheng-plasma = nixos-sheng.lib.${system}.mkShengSystem (shengBaseModules ++ [
         ./hosts/sheng/desktop/plasma.nix
       ]);
 
       # 3. Phosh 触屏专研桌面
-      # 部署命令: nh os switch ~/sheng-dotfiles -H sheng-phosh
+      # 部署命令: nh os switch ~/dotfiles-sheng -H sheng-phosh
       sheng-phosh = nixos-sheng.lib.${system}.mkShengSystem (shengBaseModules ++ [
         ./hosts/sheng/desktop/phosh.nix
       ]);
 
       # 4. Hyprland 平铺窗口管理器
-      # 部署命令: nh os switch ~/sheng-dotfiles -H sheng-hyprland
+      # 部署命令: nh os switch ~/dotfiles-sheng -H sheng-hyprland
       sheng-hyprland = nixos-sheng.lib.${system}.mkShengSystem (shengBaseModules ++ [
         ./hosts/sheng/desktop/hyprland.nix
       ]);

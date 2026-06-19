@@ -239,7 +239,7 @@ format = "[](bold secondary)[󰉋 $path]($style)[](bold secondary)"
 "Pictures" = "  "
 "Videos" = "  "
 "GitHub" = " 󰊤 "
-"sheng-dotfiles" = "  "
+"dotfiles-sheng" = "  "
 
 [git_branch]
 style = "bold bg:primary fg:235"
