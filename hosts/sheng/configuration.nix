@@ -64,6 +64,13 @@
   # 比如 SSH、Docker、Tailscale 等
   # services.openssh.enable = true;
 
+  # === ZRAM 内存压缩 ===
+  # 将空闲的内存进行压缩，变相增加可用内存容量（大幅缓解 8GB/12GB 设备开机内存占用压力）
+  zramSwap = {
+    enable = true;
+    memoryPercent = 50; # 最多使用 50% 内存作为 zram
+  };
+
   # === 分配 Swap (虚拟内存) ===
   # 为了防止跑大型重度应用（比如带一堆 Mod 的 Minecraft）时内存爆满闪退
   # 这里在系统盘分配 8GB 的动态 Swap 文件
@@ -72,5 +79,26 @@
       device = "/var/lib/swapfile";
       size = 8192; # 8192 MB = 8 GB
     }
+  ];
+
+  # === 精简 GNOME 全家桶 ===
+  # 剔除不需要的 GNOME 预装软件，减少后台常驻内存占用
+  environment.gnome.excludePackages = with pkgs; [
+    gnome-tour
+    gnome-contacts
+    gnome-maps
+    gnome-music
+    gnome-weather
+    epiphany
+    geary
+    evince
+    gnome-characters
+    totem
+    tali
+    iagno
+    hitori
+    atomix
+    yelp
+    gnome-clocks
   ];
 }

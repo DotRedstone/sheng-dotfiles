@@ -35,9 +35,8 @@
       inherit system;
       config.allowUnfree = true;
     };
-  in {
-    # System 配置：可以通过 `nixos-rebuild switch --flake .#sheng` 部署
-    nixosConfigurations.sheng = nixos-sheng.lib.${system}.mkShengGnomeSystem [
+    # 基础配置模块，所有桌面环境共享
+    shengBaseModules = [
       # 传入 inputs，方便在下游 configuration.nix 中随意调用外部 flake
       {
         _module.args.inputs = inputs;
@@ -49,6 +48,30 @@
       ./hosts/sheng/configuration.nix
       ./hosts/sheng/input-method.nix
     ];
+  in {
+    nixosConfigurations = {
+      # 1. GNOME 桌面环境 (使用上游预设)
+      # 部署命令: nh os switch ~/sheng-dotfiles -H sheng
+      sheng = nixos-sheng.lib.${system}.mkShengGnomeSystem shengBaseModules;
+
+      # 2. KDE Plasma 6 桌面环境
+      # 部署命令: nh os switch ~/sheng-dotfiles -H sheng-plasma
+      sheng-plasma = nixos-sheng.lib.${system}.mkShengSystem (shengBaseModules ++ [
+        ./hosts/sheng/desktop/plasma.nix
+      ]);
+
+      # 3. Phosh 触屏专研桌面
+      # 部署命令: nh os switch ~/sheng-dotfiles -H sheng-phosh
+      sheng-phosh = nixos-sheng.lib.${system}.mkShengSystem (shengBaseModules ++ [
+        ./hosts/sheng/desktop/phosh.nix
+      ]);
+
+      # 4. Hyprland 平铺窗口管理器
+      # 部署命令: nh os switch ~/sheng-dotfiles -H sheng-hyprland
+      sheng-hyprland = nixos-sheng.lib.${system}.mkShengSystem (shengBaseModules ++ [
+        ./hosts/sheng/desktop/hyprland.nix
+      ]);
+    };
 
     # Home Manager 配置：可以通过 `home-manager switch --flake .#dot@sheng` 部署
     homeConfigurations."dot@sheng" = home-manager.lib.homeManagerConfiguration {
