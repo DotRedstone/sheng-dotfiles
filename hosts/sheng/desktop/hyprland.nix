@@ -8,5 +8,6 @@
     dunst         # notification daemon
     wofi          # app launcher
     swaybg        # wallpaper
+    wvkbd         # Wayland 虚拟键盘 (供触屏使用: wvkbd-mobintl -L 300)
   ];
 }

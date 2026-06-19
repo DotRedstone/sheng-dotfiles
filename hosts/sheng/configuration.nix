@@ -59,6 +59,10 @@
     shell = pkgs.fish;
   };
 
+  # === 平板触控与传感器优化 ===
+  # 开启陀螺仪与重力传感器，以支持屏幕自动旋转 (GNOME, Plasma, Phosh 均可调用)
+  hardware.sensor.iio.enable = true;
+
 
   # 你还可以在这里添加其他系统级的服务
   # 比如 SSH、Docker、Tailscale 等
