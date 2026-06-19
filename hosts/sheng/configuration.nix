@@ -42,6 +42,9 @@
   # 我们强行保留它的家目录，但把它降级为系统底层账户（非普通用户），
   # 这样它就会被彻底踢出图形登录界面！
   users.users.luser.isNormalUser = pkgs.lib.mkForce false;
+  users.users.luser.isSystemUser = true;
+  users.users.luser.group = "luser";
+  users.groups.luser = {};
   users.users.luser.home = pkgs.lib.mkForce "/home/luser";
 
   # 1. 启用 fish 作为系统 shell
