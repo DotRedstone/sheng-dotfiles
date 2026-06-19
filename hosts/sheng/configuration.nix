@@ -72,7 +72,7 @@
   # 将空闲的内存进行压缩，变相增加可用内存容量（大幅缓解 8GB/12GB 设备开机内存占用压力）
   zramSwap = {
     enable = true;
-    memoryPercent = 50; # 最多使用 50% 内存作为 zram
+    memoryPercent = pkgs.lib.mkForce 50; # 最多使用 50% 内存作为 zram (强制覆盖上游默认的 25%)
   };
 
   # === 分配 Swap (虚拟内存) ===
